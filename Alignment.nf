@@ -5,19 +5,19 @@ nextflow.enable.dsl=2
 // PARAMETERS
 // ────────────────────────────────
 // --- Input/Output Paths ---
-params.processed_glob = "/home/cm/Mutanex/NEW_SRR25739478/Automate/02_Processedreads/processed_data/*_R{1,2}.fastp.fastq.gz"  // Input processed data Path
-params.deliverables     = "/home/cm/Mutanex/NEW_SRR25739478/Automate"                                                         // Base directory (Deliverables) for results 
+params.processed_glob = "{Path in your system}/02_Processedreads/processed_data/*_R{1,2}.fastp.fastq.gz"  // Input processed data Path
+params.deliverables     = "{Path in your system}/Deliverables"                                            // Base directory (Deliverables) for results 
 
 // --- Tool Paths (Singularity Images/Container ) ---
-params.bwatool          = "/home/cm/Mutanex/tools/bwa_0.7.18--he4a0461_1.sif"                                                 
-params.samtools         = "/home/cm/Mutanex/tools/samtools_1.21--h50ea8bc_0.sif"
-params.gatktool         = "/home/cm/Mutanex/tools/gatk_4.1.3.0.sif"
+params.bwatool          = "{Path in your system}/tools/bwa_0.7.18--he4a0461_1.sif"                                                 
+params.samtools         = "{Path in your system}/tools/samtools_1.21--h50ea8bc_0.sif"
+params.gatktool         = "{Path in your system}/tools/gatk_4.1.3.0.sif"
 
 // --- Reference Genome and Known Sites Path ---
 // IMPORTANT: GATK requires the reference genome to have a .fai index and a .dict sequence dictionary in the same directory.
-params.reference        = "/home/cm/Mutanex/Reference/HG38/hg38.fa"                                                            // Human Reference Genome
-params.knownsites_dbsnp = "/home/cm/Mutanex/Reference/dbsnp_ucsc_general/Homo_sapiens_assembly38.dbsnp138.vcf"                 // NCBI Known snp
-params.knownsites_mills = "/home/cm/Mutanex/Reference/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz"                        // Insertion and deletion Database
+params.reference        = "{Path in your system}/Reference/HG38/hg38.fa"                                                            // Human Reference Genome
+params.knownsites_dbsnp = "{Path in your system}/Reference/dbsnp_ucsc_general/Homo_sapiens_assembly38.dbsnp138.vcf"                 // NCBI Known snp
+params.knownsites_mills = "{Path in your system}/Reference/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz"                        // Insertion and deletion Database
 
 // ────────────────────────────────
 // CHANNEL: Find Preprocessed FASTQ Pairs
